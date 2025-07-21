@@ -8,8 +8,8 @@ TARGET_HOUR = 0
 TARGET_MINUTE = 0
 
 payload = {
-    "starts_at": "2025-07-21T17:00:00.000Z",
-    "ends_at": "2025-07-21T18:00:00.000Z",
+    "starts_at": "2025-07-26T18:00:00.000Z",
+    "ends_at": "2025-07-26T19:00:00.000Z",
     "station_id": 24,
     "payment_method": "ONLINE",
     "tariff_id": 12,
@@ -28,7 +28,7 @@ headers = {
  
 def wait_until_target_time(hour, minute):
     now = datetime.now()
-    target_time = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+    target_time = now.replace(hour=hour, minute=minute, second=1, microsecond=0)
     if target_time < now:
         target_time += timedelta(days=1) 
 
