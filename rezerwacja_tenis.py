@@ -10,7 +10,7 @@ reservationDate = datetime.now()+timedelta(days=5)
 year = str(reservationDate.year)
 month = str(reservationDate.month)
 day = str(reservationDate.day)
-hourStart = input("Podaj godzinę (0-23): ")
+hourStart = input("Podaj godzinę (6-20): ")
 hourEnd = str(int(hourStart)+1)
 if len(month) == 1:
     month = "0" + str(month)
