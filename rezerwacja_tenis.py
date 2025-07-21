@@ -6,10 +6,22 @@ ACCESS_TOKEN = "b0051da2-262d-47b3-8eba-4f9f39a994bd"
 
 TARGET_HOUR = 0
 TARGET_MINUTE = 0
-
+reservationDate = datetime.now()+timedelta(days=5)
+year = str(reservationDate.year)
+month = str(reservationDate.month)
+day = str(reservationDate.day)
+hourStart = input("Podaj godzinę (0-23): ")
+hourEnd = str(int(hourStart)+1)
+if len(month) == 1:
+    month = "0" + str(month)
+if len(str(hourStart)) == 1:
+    hourStart = "0" + str(hourStart)
+if len(str(hourEnd)) == 1:
+    hourEnd = "0" + str(hourEnd)
+print(f"Rezerwacja na {year}-{month}-{day} od {hourStart}:00 do {hourEnd}:00")
 payload = {
-    "starts_at": "2025-07-26T18:00:00.000Z",
-    "ends_at": "2025-07-26T19:00:00.000Z",
+    "starts_at": f"{year}-{month}-{day}T{hourStart}:00:00.000Z",
+    "ends_at": f"{year}-{month}-{day}T{hourEnd}:00:00.000Z",
     "station_id": 24,
     "payment_method": "ONLINE",
     "tariff_id": 12,
@@ -46,3 +58,4 @@ def send_reservation():
 if __name__ == "__main__":
     wait_until_target_time(TARGET_HOUR, TARGET_MINUTE)
     send_reservation()
+    print("Rezerwacja została wysłana.")
