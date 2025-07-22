@@ -2,7 +2,7 @@ import requests
 import time
 from datetime import datetime, timedelta
 
-ACCESS_TOKEN = "b0051da2-262d-47b3-8eba-4f9f39a994bd"
+ACCESS_TOKEN = "YOUR TOKEN HERE"
 
 TARGET_HOUR = 0
 TARGET_MINUTE = 0
