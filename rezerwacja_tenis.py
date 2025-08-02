@@ -14,6 +14,8 @@ hourStart = input("Podaj godzinę (6-20): ")
 hourEnd = str(int(hourStart)+1)
 if len(month) == 1:
     month = "0" + str(month)
+if len(day) == 1:
+    day = "0" + str(day)
 if len(str(hourStart)) == 1:
     hourStart = "0" + str(hourStart)
 if len(str(hourEnd)) == 1:
@@ -59,3 +61,4 @@ if __name__ == "__main__":
     wait_until_target_time(TARGET_HOUR, TARGET_MINUTE)
     send_reservation()
     print("Rezerwacja została wysłana.")
+
